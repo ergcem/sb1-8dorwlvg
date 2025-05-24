@@ -39,7 +39,7 @@ export function BottomNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 z-50 w-full border-t bg-background/95 backdrop-blur-lg">
-      <div className="mx-auto flex h-16 max-w-md items-center justify-around px-6">
+      <div className="mx-auto flex h-16 max-w-md items-center px-6">
         {navItems.map((item) => {
           const isActive = 
             item.href === "/" 
@@ -51,18 +51,18 @@ export function BottomNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex flex-col items-center justify-center",
-                "transition-colors duration-200",
+                "flex flex-1 flex-col items-center justify-center h-full",
+                "transition-all duration-200 ease-in-out",
                 "relative",
                 isActive 
-                  ? "text-primary" 
+                  ? "text-primary scale-105" 
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
               {item.icon}
               <span className="mt-1 text-xs">{item.label}</span>
               {isActive && (
-                <span className="absolute -top-2 h-1 w-8 rounded-full bg-primary" />
+                <span className="absolute -top-2 h-1 w-8 rounded-full bg-primary animate-fade-in" />
               )}
             </Link>
           );
