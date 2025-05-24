@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Compass, User } from "lucide-react";
+import { Home, QrCode, Bell, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -21,9 +21,14 @@ export function BottomNav() {
       icon: <Home className="h-6 w-6" />,
     },
     {
-      label: "Discover",
-      href: "/discover",
-      icon: <Compass className="h-6 w-6" />,
+      label: "Scan",
+      href: "/scan",
+      icon: <QrCode className="h-6 w-6" />,
+    },
+    {
+      label: "Notifications",
+      href: "/notifications",
+      icon: <Bell className="h-6 w-6" />,
     },
     {
       label: "Profile",
@@ -33,7 +38,7 @@ export function BottomNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 z-50 w-full border-t bg-background/80 backdrop-blur-md">
+    <nav className="fixed bottom-0 left-0 z-50 w-full border-t bg-background/95 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-md items-center justify-around px-6">
         {navItems.map((item) => {
           const isActive = 
