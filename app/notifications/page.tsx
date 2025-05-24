@@ -1,7 +1,7 @@
 "use client";
 
 import { Bell, Coffee, ShoppingBag, Gift } from "lucide-react";
-import PullToRefresh from "react-pull-to-refresh";
+import { PullToRefreshWrapper } from '@/components/PullToRefreshWrapper';
 
 export default function NotificationsPage() {
   const handleRefresh = () => {
@@ -13,7 +13,7 @@ export default function NotificationsPage() {
   };
 
   return (
-    <PullToRefresh onRefresh={handleRefresh}>
+    <PullToRefreshWrapper onRefresh={handleRefresh}>
       <main className="flex min-h-screen flex-col items-center pb-20">
         <div className="w-full max-w-md px-4 py-8">
           <div className="flex items-center justify-center space-x-2 mb-8">
@@ -71,6 +71,6 @@ export default function NotificationsPage() {
           </div>
         </div>
       </main>
-    </PullToRefresh>
+    </PullToRefreshWrapper>
   );
 }
